@@ -39,6 +39,10 @@ app.get("/compose", function(req, res) {
   res.render("compose");
 });
 
+app.get("/contact", function(req, res) {
+  res.send("zacharyinserra@gmail.com --- https://www.linkedin.com/in/zachary-inserra-97a6a0164/");
+});
+
 app.post("/compose", function(req, res) {
   const post = {
     title: req.body.postTitle,
@@ -68,14 +72,6 @@ app.get("/posts/:var", function(req, res) {
 
 });
 
-
-
-
-
-
-
-
-
-app.listen(3000, function() {
+app.listen(process.env.PORT || 3000, function() {
   console.log("Server started on port 3000");
 });
